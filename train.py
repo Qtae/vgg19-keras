@@ -32,11 +32,8 @@ if __name__=='__main__':
 
     positive_label_name_list = args.positive_names
 
-    trainset = get_dataset(class_dirs, positive_label_name_list)
-    train_images, train_labels = load_data(trainset)
-
-    #print(train_images.shape)
-    #print(train_labels.shape)
+    trainset = get_dataset_5ch(class_dirs, positive_label_name_list)
+    train_images, train_labels = load_data_5ch(trainset)
 
     filename = 'ADAM_{epoch:02d}-acc{val_accuracy:.2f}.hdf5'
     checkpoint = tf.keras.callbacks.ModelCheckpoint(os.path.join(savedir, filename),
